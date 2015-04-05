@@ -8,11 +8,16 @@
 
 #include <stdio.h>
 
+void congratulateStudent(char *student, char *course, int numDays){
+    printf("%s has done as much %s Programming as I could fit into %d days.\n",
+           student, course, numDays);
+}
+
 int main(int argc, const char * argv[]) {
-    printf("Kate has done as much Cocoa Programming as I could fit into 5 day.\n");
-    printf("Bo has done as much Objective-C Programming as I could fit into 2 days.\n");
-    printf("Mike has done as much Python programming as I could fit into 5 days.\n");
-    printf("Liz has done as much iOS Programming as I could fit into 5 days.\n");
+    congratulateStudent("Kate", "Cocoa", 5);
+    congratulateStudent("Bo", "Objective-C", 2);
+    congratulateStudent("Mike", "Python", 5);
+    congratulateStudent("Liz", "iOS", 5);
 
     return 0;
 }
