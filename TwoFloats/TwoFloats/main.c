@@ -9,17 +9,22 @@
 #include <stdio.h>
 
 int main(int argc, const char * argv[]) {
-    float float1;
-    float float2;
+    int i = 20;
+    int j = 25;
+    int k = ( i > j ) ? 10 : 5;
 
-    float1 = 3.14;
-    float2 = 42.0;
+    /*
+    if ( 5 < j - k ) { // First expression
+        printf("The first expression is true.");
+    } else if ( j > i ) { // Second expression
+        printf("The second expression is true.");
+    } else {
+        printf("Neither expression is true.");
+    }
+     */
 
-    double d1;
-
-    d1 = float1 + float2;
-
-    printf("The sum is: %f\n", d1);
-
-    return 0;
+    // j-k is evaluated first
+    printf("First value: %i\n", 5 < j-k);
+    printf("Second value: %i\n", 5 < (j-k));
+    printf("Third value: %i\n", (5 < j)-k);
 }
