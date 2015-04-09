@@ -7,29 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <readline/readline.h>
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
-        NSString *listOfNames = @"id, Scott, Matt, Nick, Stephanie, Ben";
-        NSString *name = @"scott";
-
-        NSRange match = [listOfNames rangeOfString:name];
-        if (match.location == NSNotFound){
-            NSLog(@"No case sensitive match found!");
-        } else {
-            NSLog(@"case sensitive Match found!");
-        }
-
-        match = [listOfNames rangeOfString:name
-                                           options:NSCaseInsensitiveSearch];
-        if (match.location == NSNotFound){
-            NSLog(@"No case insensitive match found!");
-        } else {
-            NSLog(@"case insensitive match found!");
-        }
-
-        NSLog(@"location of substring %o", (unsigned int)match.location);
-
+        NSLog(@"Who is cool?");
+        const char *name = readline(NULL);
+        NSString *nsName = [NSString stringWithUTF8String:name];
+        NSLog(@"%@ is cool", nsName);
     }
     return 0;
 }
