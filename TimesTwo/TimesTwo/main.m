@@ -10,16 +10,14 @@
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
-        NSDate *currentTime = [NSDate date];
-        NSLog(@"currentTime's value is %@", currentTime);
-
-        NSDate *startTime = currentTime;
-
-        sleep(2);
-        currentTime = [NSDate date];
-        NSLog(@"currentTime's value is now %@", currentTime);
-        startTime = nil;
-        NSLog(@"The address of the original object is %p", startTime);
+        NSString *listOfNames = @"Id, Scott, Matt, Nick, Stephanie, Ben";
+        NSString *name = @"Idr";
+        NSRange match = [listOfNames rangeOfString:name];
+        if (match.location == NSNotFound){
+            NSLog(@"No match found!");
+        } else {
+            NSLog(@"Match found!");
+        }
     }
     return 0;
 }
