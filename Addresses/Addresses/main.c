@@ -9,14 +9,9 @@
 #include <stdio.h>
 
 int main(int argc, const char * argv[]) {
-    float *myPointer;
-    // set myPointer to NULL for now, I'll store an address there eventually
-    myPointer = NULL;
-    if (myPointer){
-        printf("myPointer is set\n");
-    } else {
-        printf("myPointer is not set\n");
-    }
+    float x, y, z;
+    float* b, c;
+    float *d, *e;
 
     return 0;
 }
