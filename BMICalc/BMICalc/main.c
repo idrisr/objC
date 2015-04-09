@@ -7,34 +7,23 @@
 //
 
 #include <stdio.h>
-#include <math.h>
+#include <time.h>
 
-// Here is the declaration of the struct
-typedef struct {
-    float heightInMeters;
-    int weightInKilos;
-} Person;
-
-float bodyMassIndex(Person p){
-    return p.weightInKilos / pow(p.heightInMeters, 2);
-}
 
 int main(int argc, const char * argv[]) {
-    Person mikey;
-    mikey.heightInMeters = 1.7;
-    mikey.weightInKilos = 96;
+    long secondsSince1970 = time(NULL);
+    printf("It has been %ld seconds since 1970\n", secondsSince1970);
 
-    Person idris;
-    idris.heightInMeters = 1.97;
-    idris.weightInKilos = 78;
+    struct tm now;
+    localtime_r(&secondsSince1970, &now);
 
-    printf("mikey is %.2f meters tall\n", mikey.heightInMeters);
-    printf("mikey weighs %d kilograms\n", mikey.weightInKilos);
-    printf("mikey's bmi is %f\n", bodyMassIndex(mikey));
+    printf("The time is %.2d:%.2d:%.2d\n", now.tm_hour, now.tm_min, now.tm_sec);
 
-    printf("idris is %.2f meters tall\n", idris.heightInMeters);
-    printf("idris weighs %d kilograms\n", idris.weightInKilos);
-    printf("idris's bmi is %d\n", bodyMassIndex(idris));
+    // add 4 million seconds
+    now.tm_sec += 4000000;
 
+    // recalculate the time
+    mktime(&now);
+    printf("The date 4 million seconds from now is %.2d-%.2d-%.2d\n", now.tm_mon + 1, now.tm_mday, now.tm_year + 1900);
     return 0;
 }
