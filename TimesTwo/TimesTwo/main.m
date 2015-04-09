@@ -11,7 +11,11 @@
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         NSDate *currentTime = [NSDate date];
-        NSLog(@"currentTime's value is %p", currentTime);
+        NSLog(@"currentTime's value is %@", currentTime);
+
+        sleep(2);
+        currentTime = [NSDate date];
+        NSLog(@"currentTime's value is now %@", currentTime);
     }
     return 0;
 }
