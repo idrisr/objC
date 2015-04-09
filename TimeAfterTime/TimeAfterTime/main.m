@@ -10,18 +10,9 @@
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
-        // sending message to class
-        NSDate *now = [NSDate date];
-        NSLog(@"This NSDate object lives at %p", now);
-        NSLog(@"The date is %@", now);
-
-        // sending message to instance
-        double seconds = [now timeIntervalSince1970];
-        NSLog(@"It has been %f seconds since the start of 1970.", seconds);
-
-        sleep(1);
-        double second2 = [now timeIntervalSince1970];
-        NSLog(@"It has been %f seconds since the start of 1970.", second2);
+        NSHost *myHost = [NSHost currentHost];
+        NSLog(@"My host name: %@", [myHost name]);
+        NSLog(@"My localized host name: %@", [myHost localizedName]);
     }
     return 0;
 }
