@@ -10,13 +10,22 @@
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
-        NSString *listOfNames = @"Id, Scott, Matt, Nick, Stephanie, Ben";
-        NSString *name = @"Idr";
+        NSString *listOfNames = @"id, Scott, Matt, Nick, Stephanie, Ben";
+        NSString *name = @"Id";
+
         NSRange match = [listOfNames rangeOfString:name];
         if (match.location == NSNotFound){
-            NSLog(@"No match found!");
+            NSLog(@"No case sensitive match found!");
         } else {
-            NSLog(@"Match found!");
+            NSLog(@"case sensitive Match found!");
+        }
+
+        match = [listOfNames rangeOfString:name
+                                           options:NSCaseInsensitiveSearch];
+        if (match.location == NSNotFound){
+            NSLog(@"No case insensitive match found!");
+        } else {
+            NSLog(@"case insensitive Match found!");
         }
     }
     return 0;
