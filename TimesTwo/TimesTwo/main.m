@@ -11,7 +11,7 @@
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         NSString *listOfNames = @"id, Scott, Matt, Nick, Stephanie, Ben";
-        NSString *name = @"Id";
+        NSString *name = @"scott";
 
         NSRange match = [listOfNames rangeOfString:name];
         if (match.location == NSNotFound){
@@ -25,8 +25,11 @@ int main(int argc, const char * argv[]) {
         if (match.location == NSNotFound){
             NSLog(@"No case insensitive match found!");
         } else {
-            NSLog(@"case insensitive Match found!");
+            NSLog(@"case insensitive match found!");
         }
+
+        NSLog(@"location of substring %o", (unsigned int)match.location);
+
     }
     return 0;
 }
