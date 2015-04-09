@@ -9,15 +9,11 @@
 #include <stdio.h>
 
 int main(int argc, const char * argv[]) {
-    float *ptr;
     int i = 17;
     int *addressOfI = &i;
 
     printf("i stores its value at %p\n", addressOfI);
-    printf("i stores its value at %p\n", &i);
-
-    int j = i;
-    printf("j stores its value at %p\n", &j);
     printf("This function starts at %p\n", main);
+    printf("the int stored at addressOfI is %d\n", *addressOfI);
     return 0;
 }
