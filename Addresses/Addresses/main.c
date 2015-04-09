@@ -9,9 +9,9 @@
 #include <stdio.h>
 
 int main(int argc, const char * argv[]) {
-    float x, y, z;
-    float* b, c;
-    float *d, *e;
+    printf("A char consumes %zu bytes\n", sizeof(char));
+    printf("A float consumes %zu bytes\n", sizeof(float));
+    printf("A long double consumes %zu bytes\n", sizeof(long double));
 
     return 0;
 }
