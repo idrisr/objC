@@ -9,6 +9,7 @@
 #include <stdio.h>
 
 int main(int argc, const char * argv[]) {
+    float *ptr;
     int i = 17;
 
     // get the address of the int and the function
