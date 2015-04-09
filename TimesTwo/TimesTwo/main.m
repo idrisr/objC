@@ -13,9 +13,13 @@ int main(int argc, const char * argv[]) {
         NSDate *currentTime = [NSDate date];
         NSLog(@"currentTime's value is %@", currentTime);
 
+        NSDate *startTime = currentTime;
+
         sleep(2);
         currentTime = [NSDate date];
         NSLog(@"currentTime's value is now %@", currentTime);
+        startTime = nil;
+        NSLog(@"The address of the original object is %p", startTime);
     }
     return 0;
 }
