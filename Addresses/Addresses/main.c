@@ -7,11 +7,15 @@
 //
 
 #include <stdio.h>
+#include <limits.h>
 
 int main(int argc, const char * argv[]) {
-    printf("A char consumes %zu bytes\n", sizeof(char));
-    printf("A float consumes %zu bytes\n", sizeof(float));
-    printf("A long double consumes %zu bytes\n", sizeof(long double));
+    printf("A short consumes %zu bytes\n", sizeof(short));
+    printf("max value of a short is %i\n", SHRT_MAX);
+    printf("min value of a short is %i\n", SHRT_MIN);
+
+    printf("A unsigned short consumes %zu bytes\n", sizeof(unsigned short));
+    printf("max value of a unsigned short is %i\n", USHRT_MAX);
 
     return 0;
 }
