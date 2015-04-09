@@ -11,17 +11,20 @@
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         // sending message to class
-        NSDate *now = [NSDate date];
-        NSLog(@"This NSDate object lives at %p", now);
-        NSLog(@"The date is %@", now);
+        NSDate *now = [[NSDate alloc] init];
+        NSDateComponents *comps = [[NSDateComponents alloc] init];
+        [comps setYear:1978];
+        [comps setMonth:5];
+        [comps setDay:5];
+        [comps setHour:11];
+        [comps setMinute:0];
+        [comps setSecond:0];
 
-        // sending message to instance
-        double seconds = [now timeIntervalSince1970];
-        NSLog(@"It has been %f seconds since the start of 1970.", seconds);
-
-        sleep(1);
-        double second2 = [now timeIntervalSince1970];
-        NSLog(@"It has been %f seconds since the start of 1970.", second2);
+        NSCalendar *g = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+        NSDate *dateOfBirth = [g dateFromComponents:comps];
+        double secondsInterval = [now timeIntervalSinceDate:dateOfBirth];
+        NSLog(@"I've been alive for %0.f seconds", secondsInterval);
+        // 1,165,383,642
     }
     return 0;
 }
