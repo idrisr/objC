@@ -19,4 +19,8 @@
         return [NSString stringWithFormat:@"<%@: $%d, unassigned", self.label, self.resaleValue];
     }
 }
+
+-(void)dealloc{
+    NSLog(@"deallocating %@", self);
+}
 @end

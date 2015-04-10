@@ -47,9 +47,11 @@ int main(int argc, const char * argv[]) {
             // Assign the asset to the employee
             [randomEmployee addAsset:asset];
         }
-        NSLog(@"%@", employees);
 
+        NSLog(@"Employees: %@", employees);
+        NSLog(@"Giving up ownership of one employee");
         [employees removeObjectAtIndex:5];
+        NSLog(@"Giving up ownership of arrays");
         employees = nil;
     }
     return 0;

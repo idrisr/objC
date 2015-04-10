@@ -65,4 +65,8 @@
     return [NSString stringWithFormat:@"<Employee %i has $%i in assets>", self.employeeID, self.valueOfAssets];
 }
 
+-(void) dealloc{
+    NSLog(@"deallocating %@", self);
+}
+
 @end
