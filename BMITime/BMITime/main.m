@@ -28,10 +28,13 @@ int main(int argc, const char * argv[]) {
             [employees addObject:mikey];
         }
 
+        NSMutableArray *allAssets = [[NSMutableArray alloc] init];
+
         // create 10 assets
         for (int i = 0; i < 10; i++){
             // create an asset
             BNRAsset *asset = [[BNRAsset alloc] init];
+            [allAssets addObject:asset];
 
             // Give it an interesting label
             NSString *currentLabel = [NSString stringWithFormat:@"Laptop %d", i];
@@ -52,7 +55,11 @@ int main(int argc, const char * argv[]) {
         NSLog(@"Giving up ownership of one employee");
         [employees removeObjectAtIndex:5];
         NSLog(@"Giving up ownership of arrays");
+        NSLog(@"all assets %@", allAssets);
+
+//        allAssets = nil;
         employees = nil;
+        NSLog(@"all assets %@", allAssets);
     }
     return 0;
 }
