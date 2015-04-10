@@ -26,6 +26,10 @@
     [_stockhHoldings addObject:a];
 }
 
+-(void)removeStockHoldings:(BNRStockHolding *)a{
+    [_stockhHoldings removeObjectIdenticalTo:a];
+}
+
 -(float)currentValue{
     float totalValue = 0;
     for (BNRStockHolding *stockHolding in self.stockHoldings){
@@ -37,6 +41,7 @@
 -(NSString *) description{
     return [NSString stringWithFormat:@"# of stocks:%u, value: %f",
             (unsigned int)[self.stockHoldings count], self.currentValue];
+
 }
 
 @end

@@ -9,11 +9,13 @@
 #import <Foundation/Foundation.h>
 @class BNRStockHolding;
 
-@interface BNRStockPortfolio : NSObject
-{
+@interface BNRStockPortfolio : NSObject {
     NSMutableArray *_stockhHoldings;
 }
+
 @property (nonatomic, copy) NSArray *stockHoldings;
--(void) addStockHoldings:(BNRStockHolding *)a;
+
+-(void)  addStockHoldings    : (BNRStockHolding *)a;
+-(void)  removeStockHoldings : (BNRStockHolding *)a;
 -(float) currentValue;
 @end

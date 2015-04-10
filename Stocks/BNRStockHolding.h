@@ -17,11 +17,11 @@
 -(float) costInDollars;  // purchaseSharePrice * numberOfShares
 -(float) valueInDollars; // currentSharePrice  * numberOfShares
 
--(float)purchaseSharePrice;
--(void) setPurchasePrice:(float)p;
--(float)currentSharePrice;
--(void)setCurrentSharePrice:(float)p;
--(int) numberOfShares;
--(void) setNumberOfShares:(int)i;
+-(float) purchaseSharePrice;
+-(void)  setPurchasePrice     : (float)p;
+-(float) currentSharePrice;
+-(void)  setCurrentSharePrice : (float)p;
+-(int)   numberOfShares;
+-(void)  setNumberOfShares    : (int)i;
 
 @end

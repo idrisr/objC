@@ -40,9 +40,10 @@ int main(int argc, const char * argv[]) {
         [stock4 setNumberOfShares:100];
         [portfolio addStockHoldings:stock4];
 
-        for (BNRStockHolding *stock in portfolio.stockHoldings){
-            NSLog(@"%@", stock);
-        }
+        NSLog(@"%@", portfolio);
+        NSLog(@"****************************************");
+        [portfolio removeStockHoldings:stock2];
+        [portfolio removeStockHoldings:stock1];
         NSLog(@"%@", portfolio);
     }
     return 0;
