@@ -41,7 +41,6 @@
 -(NSString *) description{
     return [NSString stringWithFormat:@"# of stocks:%u, value: %f",
             (unsigned int)[self.stockHoldings count], self.currentValue];
-
 }
 
 @end

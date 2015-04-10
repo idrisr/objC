@@ -8,8 +8,12 @@
 
 #import "BNREmployee.h"
 
-@implementation BNREmployee
+// A class extension
+@interface BNREmployee()
+@property (nonatomic) unsigned int officeAlarmCode;
+@end
 
+@implementation BNREmployee
 // Accessors for assets properties
 -(void)setAssets:(NSArray *)a{
     _assets = [a mutableCopy];
