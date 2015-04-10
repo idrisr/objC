@@ -8,15 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
-@interface BNRPerson : NSObject{
-    float _heightInMeters;
-    int _weightInKilos;
-}
+@interface BNRPerson : NSObject
 
--(float)heightInMeters;
--(void)setHeightInMeters:(float)h;
--(int)weightInKilos;
--(void)setWeightInKilos:(int)w;
+// BNRPerson has two properties
+@property (nonatomic) float heightInMeters;
+@property (nonatomic) int weightInKilos;
 
 // BNRPerson has a method that calculates that Body Mass Index
 -(float)bodyMassIndex;
