@@ -11,6 +11,6 @@
 
 @interface BNRAsset : NSObject
 @property (nonatomic, copy) NSString *label;
-@property (nonatomic) BNREmployee *holder;
+@property (nonatomic, weak) BNREmployee *holder;
 @property (nonatomic) unsigned int resaleValue;
 @end
