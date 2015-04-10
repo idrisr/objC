@@ -9,6 +9,11 @@
 #import "BNRStockPortfolio.h"
 #import "BNRStockHolding.h"
 
+@interface BNRStockPortfolio(){
+    NSMutableArray *_stockhHoldings;
+}
+@end
+
 @implementation BNRStockPortfolio
 // accessors for stockHolding properties
 -(void)setStockHoldings:(NSArray *)a{
