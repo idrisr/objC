@@ -32,6 +32,7 @@ int main(int argc, const char * argv[]) {
         float bmi = mikey.bodyMassIndex;
         double years = [mikey yearsOfEmployment];
         NSLog(@"mikey has a BMI of %f, has worked with us for %.2f years", bmi, years);
+        NSLog(@"%@", mikey);
     }
     return 0;
 }

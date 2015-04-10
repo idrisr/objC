@@ -23,6 +23,14 @@
 }
 
 -(float) bodyMassIndex{
-    return 19.0;
+    float normalBMI = [super bodyMassIndex];
+    return normalBMI * 0.9;
 }
+
+-(NSString *)description{
+    return [NSString stringWithFormat:@"Employee ID: %i, BMI: %f", self.employeeID, self.bodyMassIndex];
+
+
+}
+
 @end
