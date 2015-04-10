@@ -9,7 +9,9 @@
 #import "BNREmployee.h"
 
 // A class extension
-@interface BNREmployee()
+@interface BNREmployee() {
+    NSMutableArray *_assets;
+}
 @property (nonatomic) unsigned int officeAlarmCode;
 @end
 

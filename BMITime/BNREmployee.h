@@ -10,9 +10,7 @@
 #import "BNRPerson.h"
 #import "BNRAsset.h"
 
-@interface BNREmployee : BNRPerson
-{
-    NSMutableArray *_assets;
+@interface BNREmployee : BNRPerson {
 }
 
 @property (nonatomic) unsigned int employeeID;
