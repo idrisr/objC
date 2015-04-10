@@ -7,7 +7,33 @@
 //
 
 #import "BNRStockPortfolio.h"
+#import "BNRStockHolding.h"
 
 @implementation BNRStockPortfolio
+// accessors for stockHolding properties
+-(void)setStockHoldings:(NSArray *)a{
+    _stockhHoldings = [a mutableCopy];
+}
+
+-(NSArray *) stockHoldings{
+    return [_stockhHoldings copy];
+}
+
+-(void)addStockHoldings:(BNRStockHolding *)a{
+    [_stockhHoldings addObject:a];
+}
+
+-(float)currentValue{
+    float totalValue = 0;
+    for (BNRStockHolding *stockHolding in self.stockHoldings){
+        totalValue+= [stockHolding valueInDollars];
+    }
+    return totalValue;;
+}
+
+-(NSString *) description{
+    return [NSString stringWithFormat:@"# of stocks:%ull, value: %f",
+            (unsigned int)[self.stockHoldings count], self.currentValue];
+}
 
 @end
