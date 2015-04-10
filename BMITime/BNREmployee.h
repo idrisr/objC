@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "BNRPerson.h"
-@class BNRAsset;
+#import "BNRAsset.h"
 
 @interface BNREmployee : BNRPerson
 {

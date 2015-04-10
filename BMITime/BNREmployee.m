@@ -10,6 +10,33 @@
 
 @implementation BNREmployee
 
+// Accessors for assets properties
+-(void)setAssets:(NSArray *)a{
+    _assets = [a mutableCopy];
+}
+
+-(NSArray *) assets{
+    return [_assets copy];
+}
+
+-(void) addAsset:(BNRAsset *)a{
+    // is assets nil?
+    if (!_assets){
+        // create the array
+        _assets = [[NSMutableArray alloc] init];
+    }
+    [_assets addObject:a];
+}
+
+-(unsigned int)valueOfAssets{
+    // Sum up the resale value of the assets
+    unsigned int sum = 0;
+    for (BNRAsset *a in _assets){
+        sum += [a resaleValue];
+    }
+    return sum;
+}
+
 -(double) yearsOfEmployment{
     // Do I have a non-nil hireDate?
     if (self.hireDate){
@@ -28,9 +55,11 @@
 }
 
 -(NSString *)description{
-    return [NSString stringWithFormat:@"Employee ID: %i, BMI: %f", self.employeeID, self.bodyMassIndex];
+    return [NSString stringWithFormat:@"<Employee %i has $%i in assets>", self.employeeID, self.valueOfAssets];
+}
 
-
+-(void) dealloc{
+    NSLog(@"deallocating %@", self);
 }
 
 @end
