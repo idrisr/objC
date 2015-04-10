@@ -21,4 +21,8 @@
         return 0;
     }
 }
+
+-(float) bodyMassIndex{
+    return 19.0;
+}
 @end
