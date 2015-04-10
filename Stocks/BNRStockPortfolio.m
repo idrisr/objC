@@ -20,6 +20,9 @@
 }
 
 -(void)addStockHoldings:(BNRStockHolding *)a{
+    if (!_stockhHoldings){
+        _stockhHoldings = [[NSMutableArray alloc] init];
+    }
     [_stockhHoldings addObject:a];
 }
 
@@ -32,7 +35,7 @@
 }
 
 -(NSString *) description{
-    return [NSString stringWithFormat:@"# of stocks:%ull, value: %f",
+    return [NSString stringWithFormat:@"# of stocks:%u, value: %f",
             (unsigned int)[self.stockHoldings count], self.currentValue];
 }
 
