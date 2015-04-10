@@ -19,7 +19,6 @@ int main(int argc, const char * argv[]) {
                                                          encoding:NSUTF8StringEncoding
                                                             error:NULL];
 
-
         // break it into an array of strings
         NSArray *names = [nameString componentsSeparatedByString:@"\n"];
         NSArray *words = [wordString componentsSeparatedByString:@"\n"];
