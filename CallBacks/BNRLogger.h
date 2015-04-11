@@ -24,5 +24,6 @@
 - (void) connectionDidFinishLoading:(NSURLConnection *)connection;
 - (void) connection:(NSURLConnection *)connection
    didFailWithError:(NSError *)error;
+- (void) zoneChange:(NSNotification *)note;
 
 @end
