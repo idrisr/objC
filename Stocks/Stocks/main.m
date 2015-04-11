@@ -48,6 +48,10 @@ int main(int argc, const char * argv[]) {
         NSLog(@"%@", portfolio);
 
         NSLog(@"Top 3 Holdings: %@", portfolio.top3StockHoldings);
+
+        NSLog(@"Sorted Portfolio by Symbol: %@",
+              portfolio.alphaSortedStockHoldingsBySymbol);
     }
+
     return 0;
 }

@@ -18,4 +18,5 @@
 -(void)  removeStockHoldings : (BNRStockHolding *)a;
 -(float) currentValue;
 -(NSArray *) top3StockHoldings;
+-(NSArray *) alphaSortedStockHoldingsBySymbol;
 @ end

@@ -16,6 +16,13 @@
 
 @implementation BNRStockPortfolio
 
+-(NSArray *) alphaSortedStockHoldingsBySymbol{
+
+    NSSortDescriptor *sort = [NSSortDescriptor sortDescriptorWithKey:@"symbol" ascending:YES];
+    self.stockHoldings = [self.stockHoldings sortedArrayUsingDescriptors:@[sort]];
+    return self.stockHoldings;
+}
+
 -(NSArray *) top3StockHoldings{
     NSSortDescriptor *voa = [NSSortDescriptor sortDescriptorWithKey:@"valueInDollars"
                                                           ascending:NO];
