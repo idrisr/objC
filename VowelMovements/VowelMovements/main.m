@@ -19,8 +19,7 @@ int main(int argc, const char * argv[]) {
         NSArray *vowels = @[@"a", @"e", @"i", @"o", @"u"];
 
         // declare the block variable
-        void (^devowelizer)(id, NSUInteger, BOOL *);
-        devowelizer = ^(id string, NSUInteger i, BOOL *stop){
+        void (^devowelizer)(id, NSUInteger, BOOL *) = ^(id string, NSUInteger i, BOOL *stop){
             NSMutableString *newString = [NSMutableString stringWithString:string];
 
             // iterate over the array of vowels, replacing occurences of each
