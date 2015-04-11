@@ -77,6 +77,13 @@ int main(int argc, const char * argv[]) {
 
         // Pirnt out the CEO's information
         NSLog(@"CEO: %@", executives[@"CEO"]);
+        executives =nil;
+
+        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"holder.valueOfAssets > 70"];
+        NSArray *toBeReclaimed = [allAssets filteredArrayUsingPredicate:predicate];
+        toBeReclaimed = nil;
+
+        NSLog(@"Giving up ownership of arrays");
 
         allAssets = nil;
         employees = nil;
