@@ -59,6 +59,13 @@ int main(int argc, const char * argv[]) {
             [randomEmployee addAsset:asset];
         }
 
+        NSSortDescriptor *voa = [NSSortDescriptor sortDescriptorWithKey:@"valueOfAssets"
+                                                              ascending:YES];
+        NSSortDescriptor *eid = [NSSortDescriptor sortDescriptorWithKey:@"employeeID"
+                                                              ascending:YES];
+
+        [employees sortUsingDescriptors:@[voa, eid]];
+
         NSLog(@"Employees: %@", employees);
         NSLog(@"Giving up ownership of one employee");
         [employees removeObjectAtIndex:5];
