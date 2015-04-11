@@ -15,6 +15,17 @@
 @end
 
 @implementation BNRStockPortfolio
+
+-(NSArray *) top3StockHoldings{
+    NSSortDescriptor *voa = [NSSortDescriptor sortDescriptorWithKey:@"valueInDollars"
+                                                          ascending:NO];
+    self.stockHoldings = [self.stockHoldings sortedArrayUsingDescriptors:@[voa]];
+    NSRange range = NSMakeRange(0, 3);
+
+    return [self.stockHoldings subarrayWithRange:range];
+}
+
+
 // accessors for stockHolding properties
 -(void)setStockHoldings:(NSArray *)a{
     _stockhHoldings = [a mutableCopy];

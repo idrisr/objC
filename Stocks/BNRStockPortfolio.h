@@ -17,4 +17,5 @@
 -(void)  addStockHoldings    : (BNRStockHolding *)a;
 -(void)  removeStockHoldings : (BNRStockHolding *)a;
 -(float) currentValue;
-@end
+-(NSArray *) top3StockHoldings;
+@ end
