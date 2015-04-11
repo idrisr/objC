@@ -10,30 +10,6 @@
 
 @implementation BNRStockHolding
 
--(float)purchaseSharePrice{
-    return _purchaseSharePrice;
-}
-
--(void) setPurchasePrice:(float)p{
-    _purchaseSharePrice = p;
-}
-
--(float)currentSharePrice{
-    return _currentSharePrice;
-}
-
--(void)setCurrentSharePrice:(float)p{
-    _currentSharePrice = p;
-}
-
--(int) numberOfShares{
-    return _numberOfShares;
-}
-
--(void) setNumberOfShares:(int)i{
-    _numberOfShares = i;
-}
-
 // purchaseSharePrice * numberOfShares
 -(float) costInDollars{
     return [self purchaseSharePrice] * [self numberOfShares];
