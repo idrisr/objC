@@ -16,6 +16,8 @@ int main(int argc, const char * argv[]) {
         // an employee is a person, it can do anything a person can do
         NSMutableArray *employees = [[NSMutableArray alloc] init];
 
+        NSMutableDictionary *executives = [[NSMutableDictionary alloc] init];
+
         for (int i=0; i < 10; i++){
             BNREmployee *mikey = [[BNREmployee alloc] init];
 
@@ -26,6 +28,12 @@ int main(int argc, const char * argv[]) {
 
             // put the employee in the employees array
             [employees addObject:mikey];
+
+            if (i==0){
+                [executives setObject:mikey forKeyedSubscript:@"CEO"];
+            } else if (i==1){
+                [executives setObject:mikey forKeyedSubscript:@"CTO"];
+            }
         }
 
         NSMutableArray *allAssets = [[NSMutableArray alloc] init];
@@ -57,7 +65,13 @@ int main(int argc, const char * argv[]) {
         NSLog(@"Giving up ownership of arrays");
         NSLog(@"all assets %@", allAssets);
 
-//        allAssets = nil;
+        // Print out the dictionary
+        NSLog(@"executives: %@", executives);
+
+        // Pirnt out the CEO's information
+        NSLog(@"CEO: %@", executives[@"CEO"]);
+
+        allAssets = nil;
         employees = nil;
         NSLog(@"all assets %@", allAssets);
     }
