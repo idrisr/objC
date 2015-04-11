@@ -8,11 +8,21 @@
 
 #import <Foundation/Foundation.h>
 
-@interface BNRLogger : NSObject
+// set some fucking             <delegates1             , delegates2             >
+@interface BNRLogger : NSObject <NSURLConnectionDelegate, NSURLConnectionDataDelegate>
+
+{
+    NSMutableData *_incomingData;
+}
 @property (nonatomic) NSDate *lastTime;
 - (NSString *) lastTimeString;
-
 // action methods always take one arguement - the object that is sending the action message
 //In this case, it is the timer object
 - (void) updateLastTime:(NSTimer *)t;
+- (void) connection:(NSURLConnection *)connection
+     didReceiveData:(NSData *)data;
+- (void) connectionDidFinishLoading:(NSURLConnection *)connection;
+- (void) connection:(NSURLConnection *)connection
+   didFailWithError:(NSError *)error;
+
 @end
