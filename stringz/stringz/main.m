@@ -10,24 +10,17 @@
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
-        NSMutableString *str = [[NSMutableString alloc] init];
-        for (int i = 0; i < 100; i++){
-            [str appendString:@"Idris is cool!\n"];
-        }
-
         // Declare a pointer to an NSError objet, but do not instantiate it
         // The NSError instance will only be created if there is, in fact, an error
         NSError *error;
 
-        // Pass the NSError pointer by reference to the NSString method
-        BOOL success = [str writeToFile:@"/menoexist/cool.txt"
-                             atomically:YES
-                               encoding:NSUTF8StringEncoding
-                                  error:&error];
-        if (success){
-            NSLog(@"done writing /tmp/cool.txt");
+        NSString *str = [[NSString alloc] initWithContentsOfFile:@"/etc/resolv.conf"
+                                                        encoding:NSASCIIStringEncoding
+                                                           error:&error];
+        if (!str){
+            NSLog(@"rea faield: %@", [error localizedDescription]);
         } else {
-            NSLog(@"writing /tmp/cool.txt failed: %@", [error localizedDescription]);
+            NSLog(@"resolv.conf looks like this %@", str);
         }
     }
     return 0;
