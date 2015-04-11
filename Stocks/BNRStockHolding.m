@@ -22,7 +22,8 @@
 
 -(NSString *)description{
 //    return NSString[@"cost:%f value:%f shares:%i"];
-    return [NSString stringWithFormat: @"value:%.1f cost:%.1f shares:%i",
+    return [NSString stringWithFormat: @"symbol: %@ value:%.1f cost:%.1f shares:%i",
+            self.symbol,
             self.valueInDollars,
             self.costInDollars,
             self.numberOfShares];
