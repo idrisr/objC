@@ -20,6 +20,11 @@ int main(int argc, const char * argv[]) {
 
         // declare the block variable
         void (^devowelizer)(id, NSUInteger, BOOL *) = ^(id string, NSUInteger i, BOOL *stop){
+            NSRange yRange = [string rangeOfString:@"y" options:NSCaseInsensitiveSearch];
+            if (yRange.location != NSNotFound){
+                *stop = YES; // Prevent further iterations
+                return;      // End this iteration
+            }
             NSMutableString *newString = [NSMutableString stringWithString:string];
 
             // iterate over the array of vowels, replacing occurences of each
