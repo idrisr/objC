@@ -34,6 +34,10 @@ int main(int argc, const char * argv[]) {
             }
             [devowelizedStrings addObject:newString];
         }; // End of block assignment
+
+        // iterate over the array with your block
+        [originalStrings enumerateObjectsUsingBlock:devowelizer];
+        NSLog(@"devowelized strings: %@", devowelizedStrings);
     }
     return 0;
 }
