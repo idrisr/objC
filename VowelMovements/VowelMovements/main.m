@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+typedef void (^ArrayEnumerationBlock)(id, NSUInteger, BOOL *);
+
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         // Create array of strings and a contained for devowelized ones
@@ -19,7 +21,8 @@ int main(int argc, const char * argv[]) {
         NSArray *vowels = @[@"a", @"e", @"i", @"o", @"u"];
 
         // declare the block variable
-        void (^devowelizer)(id, NSUInteger, BOOL *) = ^(id string, NSUInteger i, BOOL *stop){
+        ArrayEnumerationBlock devowelizer;
+        devowelizer = ^(id string, NSUInteger i, BOOL *stop){
             NSRange yRange = [string rangeOfString:@"y" options:NSCaseInsensitiveSearch];
             if (yRange.location != NSNotFound){
                 *stop = YES; // Prevent further iterations
