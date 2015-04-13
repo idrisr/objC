@@ -11,13 +11,15 @@
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
-        BNRLogger *logger = [[BNRLogger alloc] init];
-        [[NSNotificationCenter defaultCenter] addObserver:logger
-                                                 selector:@selector(zoneChange:)
-                                                     name:NSSystemTimeZoneDidChangeNotification
-                                                   object:nil];
+        void(^zoneChange)(NSNotification *)=^(NSNotification *notification){
+            NSLog(@"The system time zone has changed");
+        };
 
-        NSURL *url = [NSURL URLWithString: @"http://www.gutenberg.org/cache/epub/205/pg205.txt"];
+        [[NSNotificationCenter defaultCenter]
+         addObserverForName: NSSystemTimeZoneDidChangeNotification
+                object:nil
+                 queue:nil
+         usingBlock:zoneChange];
 
 
         [[NSRunLoop currentRunLoop] run];
