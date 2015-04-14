@@ -47,6 +47,11 @@
     self.insertButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     self.insertButton.frame = buttonFrame;
 
+    // set the target and action for the Insert button
+    [self.insertButton addTarget:self
+                          action:@selector(addTask:)
+                forControlEvents:UIControlEventTouchUpInside];
+
     // Give the button a title
     [self.insertButton setTitle:@"Insert" forState:UIControlStateNormal];
 
